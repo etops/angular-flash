@@ -1,6 +1,6 @@
-/*! angular-flash - v2.5.0 - 2017-07-23
+/*! angular-flash - v2.5.0 - 2018-01-26
 * https://github.com/sachinchoolur/angular-flash
-* Copyright (c) 2017 Sachin; Licensed MIT */
+* Copyright (c) 2018 Sachin; Licensed MIT */
 
 'use strict';
 
@@ -70,7 +70,7 @@ app.directive('flashMessage', ['Flash', function (Flash) {
             }
         },
         transclude: Flash.config.templateTransclude,
-        template: '\n                <div ng-repeat="flash in $root.flashes track by $index" ng-if="flash.config.container === name" class="alert-container">\n                    ' + Flash.config.template + '\n                </div>\n            '
+        template: '\n                <div ng-repeat="flash in $root.flashes track by flash.id" ng-if="flash.config.container === name" class="alert-container">\n                    ' + Flash.config.template + '\n                </div>\n            '
     };
 }]);
 
